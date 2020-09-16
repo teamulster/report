@@ -1,0 +1,97 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+\usepackage[latin1]{inputenc}
+\usepackage[absolute]{textpos}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Remove boxes from links
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\ifCLASSINFOpdf
+  
+\else
+ 
+\fi
+
+
+% If necessary, add hyphenations here
+\hyphenation{}
+
+\begin{document}
+\vspace{50mm}
+
+% Report header (Title, authors, ...)
+\title{soHappy}
+
+\author{
+  \IEEEauthorblockN{
+    \textbf{Marcel Arndt}
+  }
+  \IEEEauthorblockA{
+    Hochschule Augsburg \\
+    Augsburg, Germany \\
+  } \and
+  \IEEEauthorblockN{
+    \textbf{Lukas Diehm}
+  }
+  \IEEEauthorblockA{
+    Hochschule Augsburg \\
+    Augsburg, Germany \\
+  } \and
+  \IEEEauthorblockN{
+    \textbf{Anna Gsell}
+  }
+  \IEEEauthorblockA{
+    Hochschule Augsburg \\
+    Augsburg, Germany \\
+  } \and
+  \IEEEauthorblockN{
+    \textbf{Kok Yew Lim}
+  }
+  \IEEEauthorblockA{
+    Hochschule Augsburg \\
+    Augsburg, Germany \\
+  } \and
+  \IEEEauthorblockN{
+    \textbf{Fabian Siegel}
+  }
+  \IEEEauthorblockA{
+    Hochschule Augsburg \\
+    Augsburg, Germany \\
+  }
+}
+
+\maketitle
+
+% University logo
+\begin{textblock*}{188mm}(55mm,11mm)
+\includegraphics[width=0.55\textwidth]{figures/informatik_Logo.jpg}
+\end{textblock*}
+
+% Abstract
+\input{chapters/abstract}
+\IEEEpeerreviewmaketitle
+
+% Main chapters
+\input{chapters/introduction}
+\input{chapters/background}
+\input{chapters/methodology}
+\input{chapters/implementation}
+\input{chapters/results}
+\input{chapters/discussion}
+\input{chapters/conclusion}
+
+% Literature - insert new references in sources/sources.bib
+\bibliography{sources/sources}
+\bibliographystyle{plain}
+
+\end{document}
+
