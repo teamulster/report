@@ -1,11 +1,12 @@
 \section{Background} \label{sec:background}
 % identifying existing approaches within the research literature; this may potentially include mobile-based and non-mobile approaches if necessary
-TensorFlow is a open source Machine Learning library developed by Google.
+The renaissance of machine learning in the 2010s outclassed this approach because it lacks the ability to detect emotions/smiles.
+Regarding soHappy, it led to TensorFlow becoming a more considerable option for emotion detection.
+TensorFlow is a open source machine learning library developed by Google.
 It supports a wide variety of programming languages, mainly targeting web and mobile applications.
-Regarding soHappy we were looking for a lightweight open source approach to detect smiles. Since HaarCascade uses OpenCV which is great for detecting a user's face but struggles when it comes to smile/emotion detection, our choice fell to TensorFlow.
 For mobile development TensorFlow provides a Lite version called TensorFlow Lite (TFLite) which can be easily included in a mobile app.
-As a main advantage TFLite offered us the possibility to add a self-trained model to detect smiles. This was very helpful to reduce its more advanced emotion detection features to a simpler smile detection model.
-As a second option we added a Face / Smile Detector implemented in Google's Android API (ML Kit) which also uses TensorFlow.
-ML Kit comes with a model which is trained using Deep Machine Learning (DML).
+The main advantage TFLite offers, is the ability to add a self-trained model to detect smiles. This is very helpful to reduce its more advanced emotion detection features to a simpler smile detection model.
+As a second option we added a Face/Smile Detector implemented in Google's Android API (ML Kit) which also uses TensorFlow.
+ML Kit comes with a model trained using deep machine learning (DML).
 DML increases both face and smile detection performance by a big margin.
-As we didn't want to let our self-trained model slide, we sticked with our very own TFLite implementation as the default.
+Therefore it has been added as a second option besides the OpenCV/self-trained TFLite implementations.
