@@ -6,7 +6,16 @@ According to \cite{sample_ref}, lorem ipsum dolor sit amet, consetetur sadipscin
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 
 \subsection{Architecture}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+The main goal of the software architecture of soHappy is providing flexability
+in switching out various components.
+
+Adding an Face- or Smile-Detector based on the technology of liking requires an
+developer to implement the intended interface. The implementation then can be 
+selected by modifing the configuration file of the app. A Factory Method will
+create the Face- or Smile-Detector based on the configuration file.
+
+
 
 \subsection{State Machine}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
