@@ -14,3 +14,25 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 \subsection{User Interface}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
 
+\subsection{Model Training}
+
+As stated in the background section, soHappy uses a deep learning model to 
+provide information about a person smiling by utilizing TensorFlow.
+
+However, for TFLite to detect smiling, the model must be trained first. This
+model is not trained on the device, but will be trained in before and shipped
+with the android app.
+
+The soHappy smile detection model is based a convolutional neural network 
+(CNN). CNNs are useful for image analysis purpuses. A CNN utilizes multiple
+convolutional layers as well as pooling layers. A convolutional layer works by
+looking at regions of an image instead of individual pixels. This process is
+called convolution. A more in depth explanation on how CNN work, see 
+\cite{8308186}.
+
+For the soHappy smile detection model, eight convolutional layers are used. 
+Two convolutional layers are followed by a pooling layer, repeated four times.
+In the end, the model is flattened. This model architecture is based on the
+work of Mayur Madnani \cite{MayurMadnani2018}.
+
+As dataset, the data of \cite{Arigbabu2015} was used.
