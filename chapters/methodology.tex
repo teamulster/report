@@ -21,7 +21,7 @@ Figure \ref{fig:state_diagramm} shows the states and transitions of the state ma
 A state change can be invoked through three different kind of actions: An user action (for example pressing a button), a timeout after a specified timeframe or a significant analyser result (face detection or smile detection).
 
 Note that if a face is detected and users move their faces out of the frame afterwards, the process continues and handles these event indirectly as missing smiles.
-In Addition, the face leaving the camera frame after a first smile detection is not dealt with explicitly but leads to low smile results.
+In addition, the face leaving the camera frame after a first smile detection is not dealt with explicitly but leads to low smile results.
 Instead of having an end node, the application flow returns to the start screen, represented in the start state.
 
 \subsection{User Interface}
