@@ -1,12 +1,12 @@
 \section{Background} \label{sec:background}
 % identifying existing approaches within the research literature; this may potentially include mobile-based and non-mobile approaches if necessary
-Since Viola and Jones proposed "Rapid Object Detection using a Boosted Cascade of Simple Features" in 2001, their concept is the basis of most face detection approaches.
+Since Viola and Jones proposed ``Rapid Object Detection using a Boosted Cascade of Simple Features'' in 2001, their concept is the basis of most face detection approaches.
 It's an extremely fast and solid machine learning approach for object detection in videos and pictures, e. g. faces.
 
 In detail, the concept is distinguished by three key components.
-The first is the “Integral Image”, a new image representation which allows the detector to compute features very fast.
-Secondly an AdaBoost based learning algorithm selects a small number of promising visual features and constructs very efficient classifiers.
-The last component is a method which combines increasingly more complex classifiers in a “cascade” where most of the computation time is spent on critical object-like parts of the given image by discarding non-promising regions early in the analysis process \cite{viola_jones}.
+The first is the ``Integral Image'', a new image representation which allows the detector to compute features very fast.
+Secondly, an AdaBoost based learning algorithm selects a small number of promising visual features and constructs very efficient classifiers.
+The last component is a method which combines increasingly more complex classifiers in a ``cascade'' where most of the computation time is spent on critical object-like parts of the given image by discarding non-promising regions early in the analysis process \cite{viola_jones}.
 
 For that reason the approach is highly appropriate to fulfill the face detection task of the soHappy application.
 The open source computer vision and machine learning software library OpenCV provides a cascade classifier class for object detection, which uses the concept of Viola and Jones \cite{opencv_cascade_classifier}.
