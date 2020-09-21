@@ -10,22 +10,23 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 The main goal of the software architecture of soHappy is providing flexibility 
 in switching out various components.
 
-Adding a Face- or Smile-Detector based on the technology of liking requires a
+Adding a Face or Smile Detector based on the technology of liking requires a
 developer to implement the designated interface. The implementation can then be 
-selected by modifying the configuration file of the app. A configuration-based 
-factory will create the Face- or Smile-Detector based on a configuration file. 
-(See \ref{fig:arch1})
+selected by modifying a configuration file of the app. A factory will create 
+the Face or Smile Detector based on a configuration file. 
 
-The Image Analyzer uses the created implementations of Face- and Smile-
-Detectors. The results of the Image Analyzer are collected and stored in a
+The image analyzer uses the created implementations of Face- and Smile-
+Detectors. The results of the image analyzer are collected and stored in a
 local database.
 
-In order to load and manage the configuration file, an configuration manager 
+In order to load and manage the configuration file, a configuration manager 
 is used.
+
+Figure \ref{fig:arch1} shows the class diagram of the architecture.
 
 \begin{figure}
     \includegraphics[width=\linewidth]{figures/methodology_architecture_1.jpg}
-    \caption{class diagram describing the architecture}
+    \caption{Class diagram describing the architecture}
     \label{fig:arch1}
 \end{figure}
 
