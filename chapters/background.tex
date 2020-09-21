@@ -1,10 +1,13 @@
 \section{Background} \label{sec:background}
 % identifying existing approaches within the research literature; this may potentially include mobile-based and non-mobile approaches if necessary
-TensorFlow \cite{tensorflow} is a open source machine learning library developed by Google.
+Regarding soHappy, TesnorFlow \cite{tensorflow} appears to be a convenient fit when it comes to smile detection.
+TensorFlow is a open source machine learning library developed by Google.
 It supports a wide variety of programming languages, mainly targeting web and mobile applications.
 For mobile development TensorFlow provides a Lite version called TensorFlow Lite (TFLite) which can be easily included in a mobile app.
 The main advantage TFLite offers, is the ability to add a self trained model to detect smiles.
-With this being said, the app's TFLite model can be broken down into just being able to detect smiles, rather than having the whole emotion detection.
+Depending on the dataset a model is trained with, TFLite usually is able to detect emotions, for example happiness or sadness.
+However, soHappy only needs smile detection to comply with the core requirements.
+Therefore its model can be broken down to simply detect smiling/happiness, rather than having the whole emotion detection.
 As an alternative a Face/Smile Detector was implemented using Google's Android API (ML Kit) \cite{mlkit} which also utilizes TensorFlow.
 ML Kit comes with a model trained using deep learning (DL).
 DL increases both face and smile detection performance by a big margin.
