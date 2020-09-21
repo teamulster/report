@@ -17,22 +17,24 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 \subsection{Model Training}
 
 As stated in the background section, soHappy uses a deep learning model to 
-provide information about a person smiling by utilizing TensorFlow.
+provide information about a person smiling by utilizing TFLite.
 
 However, for TFLite to detect smiling, the model must be trained first. This
 model is not trained on the device, but will be trained in before and shipped
 with the android app.
 
-The soHappy smile detection model is based a convolutional neural network 
-(CNN). CNNs are useful for image analysis purpuses. A CNN utilizes multiple
+The soHappy smile detection model is on based a convolutional neural network 
+(CNN). CNNs are useful for image analysis purposes. A CNN utilizes multiple
 convolutional layers as well as pooling layers. A convolutional layer works by
-looking at regions of an image instead of individual pixels. This process is
-called convolution. A more in depth explanation on how CNN work, see 
-\cite{8308186}.
+applying multiple different filters onto the input of the layer. An 
+convolutional layer also looks at regions of the applied filter layers instead 
+of individual pixels. This process is called convolution.
+Pooling describes the process of discarding unused information.
+Refer to \cite{8308186} for a more in-depth explanation on how CNNs work.
 
 For the soHappy smile detection model, eight convolutional layers are used. 
-Two convolutional layers are followed by a pooling layer, repeated four times.
-In the end, the model is flattened. This model architecture is based on the
-work of Mayur Madnani \cite{MayurMadnani2018}.
+Every two convolutional consecutive layers are followed by a pooling layer, 
+repeated four times. In the end, a model is flattened. This model
+architecture is based on the work of Madnani \cite{MayurMadnani2018}.
 
-As dataset, the data of \cite{Arigbabu2015} was used.
+In order to train the model, the model of \cite{Arigbabu2015} was utilized.
