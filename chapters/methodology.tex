@@ -38,6 +38,11 @@ Figure \ref{fig:arch1} shows the class diagram of the architecture.
     \label{fig:arch1}
 \end{figure}
 
+On order to seperate to back-end logic from the User Interface, soHappy uses
+``model-view-viewmodel'', a variant of the ``Model-View-Controller'' design 
+pattern. The view is seperated by the model by the so called viewmodel, which
+allows easy databinding to the UI (view), whilst allowing easy access from the
+model (model).
 
 \subsection{State Machine}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
