@@ -14,13 +14,13 @@ An icon is displayed on the screen once a smile has been detected.
 By virtue of the user seeing their own face during this process, genuine smiling may become difficult, especially if the user has problems with feelings of self-consciousness. In order to aid the user in smiling, a blur filter is applied to the camera, rendering objects harder to recognize.
 Should the user fail to smile for at least ten seconds after their face has been detected, the process will be canceled. From this point, the user may opt to try again or continue on to the next part.
 
-Figure \ref{fig:user_journey} illustrates the user interface during two different stages in the core process of the soHappy app.
+Figure \ref{fig:user_journey} illustrates the user interface during different stages in the core process of the soHappy app.
 
-\begin{figure}
+\begin{figure*}
   \includegraphics[width=\linewidth]{figures/user_journey.jpg}
-  \caption{Example of two stages during the soHappy process. The left image shows the state in which a face has not been detected yet, while the right image depicts the state where a smile has been detected.}
+  \caption{Example of four stages during the core process. The first image shows the state in which a face has not been detected yet. Upon successfully detecting a face, the app starts a short countdown, depicted in the following image. Once a smile has been detected, visual feedback is provided, as shown in the third image. At the end of the process, the user is presented with their results, as illustrated in the final image.}
   \label{fig:user_journey}
-\end{figure}
+\end{figure*}
 
 Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy.
 
