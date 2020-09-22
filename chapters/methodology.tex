@@ -25,7 +25,7 @@ the Face or Smile Detector based on a configuration file.
 
 The image analyzer uses the created implementations of Face and Smile
 Detectors. The results of the image analyzer are collected and stored in a
-local databaseback-end .
+local database.
 
 In order to load and manage the configuration file, a configuration manager 
 is used.
@@ -78,7 +78,7 @@ As stated in the background section, soHappy uses a deep learning model to
 provide information about a person smiling by utilizing TFLite.
 
 However, for TFLite to detect smiling, the model must be trained first. This
-model is not trained on the device, but will be trained in before and shipped
+model is not trained on the device, but will be trained separately and shipped
 with the android app.
 
 The soHappy smile detection model is on based a convolutional neural network 
@@ -95,4 +95,4 @@ Every two consecutive convolutional layers are followed by a pooling layer,
 repeated four times. In the end, a the result is flattened. This model
 architecture is based on the work of Madnani \cite{MayurMadnani2018}.
 
-In order to train the model, the dataset of \cite{Arigbabu2015} was utilized.
+In order to train the model, the dataset described in ``Smile detection using hybrid face representation'' \cite{Arigbabu2015} was utilized.
