@@ -1,3 +1,46 @@
 \section{Implementation} \label{sec:implementation}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+
+For the implementation of the app, Kotlin was used.
+
+Kotlin is ``[...] an open-source statically typed programming language
+that targets the JVM, Android, JavaScript and Native.'' \cite{kotlin2020}
+Google officially supports Kotlin for Android Apps since 2017
+\cite{googleio2017} and recommends using Kotlin since 2019
+\cite{androidkotlin2019}.
+
+Thanks to the similarity with languages like Java and TypeScript, adapting
+Kotlin as programming language was relatively easy for the project team.
+
+Various language features of Kotlin helped in development, too. Instead of
+implementing the singleton pattern, Kotlin allows to create an single object
+per runtime by using the \texttt{object}-Keyword.
+
+Some design choices of the app were slowed down by Kotlins language features.
+As all Kotlin classes inherit from \texttt{Any}, using features of Java's 
+\texttt{Object}-class are not natively available. This made using the methods
+\texttt{.wait()} and \texttt{.notify()}, which are used for synchronisation,
+more difficult.
+
+Using ``Android Studio'', the official IDE for Android development, allowed
+faster development thanks to useful features like auto-completion. 
+
+An Android app is built into an `apk'-file. In order to reduce application
+size, soHappy differentiates between CPU architectures, and will
+build an apk for each architecture. As a minimum SDK version, version 23
+was chosen. This means that the app works on Android 6 and above.
+
+In order to improve the code quality, a linting software called ``detekt'',
+``[...] a static code analysis tool [...]''\cite{detekt2020} was used.
+
+Various libraries were used to help implement the application. Using
+the included build tool ``Gradle'' allowed easy management of dependencies.
+The following libraries are worth mentioning: CameraX is Androids newest
+Library allowing access to the Camera and providing an easy way to analyse 
+captured images. ``GPUImage'' allowed to set filters onto the preview 
+image. A library called ``Nitrite'' allowed us to implement an NoSQL-Database 
+storing our measurement locally.
+
+For image analysis, we used the following libraries: For cascade-based face
+detection, the official `OpenCV4Android'-Library was used. For machine learning
+based approaches, the official TFLite library was utilised.
 
