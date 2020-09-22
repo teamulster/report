@@ -14,7 +14,35 @@ Should the user fail to smile for at least ten seconds after their face has been
 Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy.
 
 \subsection{Architecture}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+
+The main goal of the software architecture of soHappy is providing flexibility 
+in switching out various components.
+
+Adding a Face or Smile Detector based on the technology of liking requires a
+developer to implement the designated interface. The implementation can then be 
+selected by modifying a configuration file of the app. A factory will create 
+the Face or Smile Detector based on a configuration file. 
+
+The image analyzer uses the created implementations of Face and Smile
+Detectors. The results of the image analyzer are collected and stored in a
+local database.
+
+In order to load and manage the configuration file, a configuration manager 
+is used.
+
+Figure \ref{fig:arch1} shows the class diagram of the architecture.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{figures/methodology_architecture_1.jpg}
+    \caption{Class diagram describing the architecture}
+    \label{fig:arch1}
+\end{figure}
+
+On order to seperate to back-end logic from the User Interface, soHappy uses
+``model-view-viewmodel'', a variant of the ``model-view-controller'' design 
+pattern. The view is seperated by the model by the so called viewmodel, which
+allows easy databinding to the UI (view), whilst allowing easy access from the
+back-end (model). \cite{mvvm}
 
 \subsection{State Machine}
 
