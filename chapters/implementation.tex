@@ -33,17 +33,18 @@ In order to improve the code quality, a linting software called ``detekt'',
 ``[...] a static code analysis tool [...]''\cite{detekt2020} was used.
 
 Various libraries were used to help implement the application. Using
-the included build tool ``Gradle'' allowed easy management of dependencies.
-The following libraries are worth mentioning: CameraX is Androids newest
-Library allowing access to the Camera and providing an easy way to analyse 
-captured images. ``GPUImage'' allowed to set filters onto the preview 
-image. A library called ``Nitrite'' allowed us to implement an NoSQL-Database 
+the included build tool ``Gradle'' \cite{gradle} allowed easy management of 
+dependencies. The following libraries are worth mentioning: CameraX 
+\cite{camerax} is Androids newest Library allowing access to the Camera and 
+providing an easy way to analyse captured images. ``GPUImage'' \cite{gpuimage}
+allowed to set filters onto the preview image. A library called ``Nitrite''
+\cite{nitrite} allowed us to implement an NoSQL-Database 
 storing our measurement locally.
 
 For image analysis, we used the following libraries: For cascade-based face
-detection, the official `OpenCV4Android'-Library was used. For machine learning
-based approaches, the official TFLite library was utilised.
-
+detection, the official `OpenCV4Android'-Library was used\cite{opencv4android}.
+For machine learning based approaches, the official TFLite library was utilised.
+\cite{tensorflow}
 
 In order to train the CNN, which is explained in \ref{sec:methodology}, an 
 Python 3-Script running in an jupyter notebook was utilised. 
