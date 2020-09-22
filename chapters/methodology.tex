@@ -71,3 +71,28 @@ Like most smartphone applications, the soHappy app consists of multiple screens 
 \end{figure}
 
 In terms of design, Android apps are generally expected to conform to Material Design, a set of guidelines defined by Google to help ensure both visual and practical consistency. As such, the user interface of the soHappy app is designed with Material Design in mind \cite{material_design}, incorporating principles such as animation or design based on the real world.
+
+\subsection{Model Training}
+
+As stated in the background section, soHappy uses a deep learning model to 
+provide information about a person smiling by utilizing TFLite.
+
+However, for TFLite to detect smiling, the model must be trained first. This
+model is not trained on the device, but will be trained separately and shipped
+with the android app.
+
+The soHappy smile detection model is on based a convolutional neural network 
+(CNN). CNNs are useful for image analysis purposes. A CNN utilizes multiple
+convolutional layers as well as pooling layers. A convolutional layer works by
+applying multiple different filters onto the input of the layer. A 
+convolutional layer also looks at regions of the applied filter layers instead 
+of individual pixels. This process is called convolution.
+Pooling describes the process of discarding unused information.
+Refer to \cite{8308186} for a more in-depth explanation on how CNNs work.
+
+For the soHappy smile detection model, eight convolutional layers are used. 
+Every two consecutive convolutional layers are followed by a pooling layer, 
+repeated four times. In the end, a the result is flattened. This model
+architecture is based on the work of Madnani \cite{MayurMadnani2018}.
+
+In order to train the model, the dataset described in ``Smile detection using hybrid face representation'' \cite{Arigbabu2015} was utilized.
