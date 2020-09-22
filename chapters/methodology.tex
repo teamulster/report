@@ -23,7 +23,7 @@ developer to implement the designated interface. The implementation can then be
 selected by modifying a configuration file of the app. A factory will create 
 the Face or Smile Detector based on a configuration file. 
 
-The image analyzer uses the created implementations of Face- and Smile-
+The image analyzer uses the created implementations of Face and Smile
 Detectors. The results of the image analyzer are collected and stored in a
 local database.
 
@@ -39,10 +39,10 @@ Figure \ref{fig:arch1} shows the class diagram of the architecture.
 \end{figure}
 
 On order to seperate to back-end logic from the User Interface, soHappy uses
-``model-view-viewmodel'', a variant of the ``Model-View-Controller'' design 
+``model-view-viewmodel'', a variant of the ``model-view-controller'' design 
 pattern. The view is seperated by the model by the so called viewmodel, which
 allows easy databinding to the UI (view), whilst allowing easy access from the
-model (model).
+back-end (model). \cite{mvvm}
 
 \subsection{State Machine}
 
