@@ -1,16 +1,19 @@
 \section{Background} \label{sec:background}
 % identifying existing approaches within the research literature; this may potentially include mobile-based and non-mobile approaches if necessary
+Detecting faces, let alone smiles, is a challenging task essential to the functionality of the soHappy app. Solving such tasks usually involves usage of machine learning algorithms, which process large amounts of data in order to make predictions and are generally seen as state of the art for computer vision problems \cite{foundations_ml}. Thus, machine learning approaches were chosen to implement face and smile detection.
 
-Since Viola and Jones proposed ``Rapid Object Detection using a Boosted Cascade of Simple Features'' in 2001, their concept is the basis of most face detection approaches.
+Since Viola and Jones proposed ``Rapid Object Detection using a Boosted Cascade of Simple Features'' \cite{viola_jones} in 2001, their concept is the basis of most face detection approaches.
 It's an extremely fast and solid machine learning approach for object detection in videos and pictures, e. g. faces.
+
 In detail, the concept is distinguished by three key components.
 The first is the ``Integral Image'', a new image representation which allows the detector to compute features very fast.
 Secondly, an AdaBoost based learning algorithm selects a small number of promising visual features and constructs very efficient classifiers.
-The last component is a method which combines increasingly complex classifiers in a ``cascade'' where most of the computation time is spent on critical object-like parts of the given image by discarding non-promising regions early in the analysis process \cite{viola_jones}.
+The last component is a method which combines increasingly complex classifiers in a ``cascade'' where most of the computation time is spent on critical object-like parts of the given image by discarding non-promising regions early in the analysis process.
+
 For that reason the approach is highly appropriate to fulfill the face detection task of the soHappy application.
 The open source computer vision and machine learning software library OpenCV provides a cascade classifier class for object detection, which uses the concept of Viola and Jones \cite{opencv_cascade_classifier}.
 
-Regarding soHappy, TensorFlow \cite{tensorflow} is a convenient fit when it comes to smile detection.
+TensorFlow \cite{tensorflow} is a convenient fit when it comes to smile detection.
 TensorFlow is a open source machine learning library developed by Google.
 It supports a wide variety of programming languages, mainly targeting web and mobile applications.
 For mobile development, TensorFlow provides a Lite version called TensorFlow Lite (TFLite) which can be easily included in a mobile app.
@@ -18,7 +21,8 @@ The main advantage TFLite offers is the ability to add a self trained model to d
 Depending on the dataset a model is trained with, it is usually able to detect emotions, for example happiness or sadness.
 However, soHappy only needs smile detection to comply with the core requirements.
 Therefore, its model can be broken down to simply detect smiling/happiness, rather than having the entire emotion detection.
-As an alternative, a Face/Smile Detector was implemented using Google's Android API (ML Kit) \cite{mlkit} which also utilizes TensorFlow.
+
+As an alternative, a face/smile detector was implemented using Google's Android API (ML Kit) \cite{mlkit} which also utilizes TensorFlow.
 ML Kit comes with a model trained using deep learning.
 Deep learning increases both face and smile detection performance by a big margin.
 The idea behind adding ML Kit besides already having OpenCV/self trained TFLite model, is to provide more exchangeability of soHappy's core functionality and increase flexibility for a future study to easily add their own implementations.
