@@ -10,7 +10,7 @@ Google officially supports Kotlin for Android apps since 2017
 Thanks to the similarity with languages like Java and TypeScript, adapting
 Kotlin as programming language was relatively easy for the project team.
 
-Various language features of Kotlin helped in development, too. Instead of
+Various language features of Kotlin helped in development. For example, instead of
 implementing the singleton pattern, Kotlin allows to create an single object
 per runtime by using the \texttt{object}-Keyword.
 
@@ -20,7 +20,7 @@ As all Kotlin classes inherit from \texttt{Any}, using features of Java's
 \texttt{.wait()} and \texttt{.notify()}, which are used for synchronisation,
 more difficult.
 
-``Android Studio'', known as the official integrated development environment 
+``Android Studio'', the official integrated development environment 
 (IDE) for Android development, allows faster development thanks to useful
 features like auto-completion. 
 
@@ -40,17 +40,17 @@ dependencies. The following libraries are worth mentioning: CameraX
 \cite{camerax} is Android's latest library allowing access to the camera and 
 providing an easy way to analyse captured images. ``GPUImage'' \cite{gpuimage}
 allows to apply filters onto the preview image. A library called ``Nitrite''
-\cite{nitrite} allows to implement an NoSQL-Database storing our measurement 
+\cite{nitrite} allows to implement an NoSQL-Database storing measurements
 locally.
 
 For image analysis the following libraries are used: Cascade classifier based
-face detection use the official `OpenCV4Android'-Library \cite{opencv4android},
+face detection uses the official ``OpenCV4Android'' library \cite{opencv4android},
 while machine learning based approaches utilise the official TFLite library.
 \cite{tensorflow}
 
 In order to train the CNN, which is explained in \ref{sec:methodology}, a
 Python 3 script running in an Jupyter notebook is used. 
-The Python TensorFlow library is used in combination with `Keras',
+The Python TensorFlow library is used in combination with ``Keras'',
 which allows creating an model architecture easily. In order to prepare the
-training, test and validation data, the libraries `pandas', `pillow', 
-`matplotlib' and `numpy' are used.
+training, test and validation data, the libraries ``pandas'', ``pillow'', 
+``matplotlib'' and ``numpy'' are used.

@@ -1,16 +1,20 @@
 \section{Methodology} \label{sec:methodology}
 % detailing the approaches that were used in your experiments; this may also include implementation details in relation to the mobile architecture used
-While developing the app a variety of agile development methods were applied.
+
+\subsection{development process}
+
+While developing the app, a variety of agile development methods were applied.
 The project team used daily stand-ups to share their individual work progress and talk about current difficulties.
 A short conclusion meeting was held at the end of every day to summarise the work effort and support productive communication.
 The Kanban board optimised the organisational process. Moreover, it helped the team to remember who's currently working on which task.
 At the beginning of every week, a retrospection of the past week was conducted, followed by identification of the milestone for the week.
+
 The team named a scrum master, who ensured that the team adhered to the chosen agile methods. Furthermore, the member with the greatest development experience was chosen as lead of programming.
-With two approvals necessary for a pull request to be merged, every member of the project group was able to constantly keep an overview of the project's current progression.
+With two approvals necessary for a pull request to be merged, every member of the project group was able to constantly keep an overview over the project's current progression.
 
 \subsection{User Journey} \label{sec:user_journey}
-Upon launching the soHappy app, the user will be presented with a home screen, where they can either start the app or navigate to miscellaneous screens via an options menu, in which the user may change settings, for example.
-When the user starts the app, they will be asked to move their face into the camera frame. Until a face is recognized, a red tint is applied to the camera frame, providing visual feedback to the user. Advancing to different stages of the process changes the color of the tint accordingly.
+Upon launching the soHappy app, the user will be presented with a home screen, where they can either start the app or navigate to miscellaneous screens via an options menu, in which the user may change settings, view their history or look up a short explanation.
+When the user starts the app, they will be asked to move their face into the camera frame. Until a face is recognized, a red tint is applied to the camera frame, providing visual feedback to the user. Advancing to different stages of the process changes the color of the tint accordingly. If no face is detected after ten seconds, the measurement will be restarted.
 
 Once a face has been detected, the red tint is changed to blue. At the same time, a countdown of three seconds is started, allowing the user to relax and take a couple of breaths.
 After the countdown expires, a short text serving as a stimulus to smile is shown on the screen, prompting the user to recall memories they are fond of.
@@ -35,15 +39,12 @@ Following this process, a set of six questions querying current circumstances ar
 The main goal of the software architecture of soHappy is providing flexibility 
 in switching out various components.
 
-Adding a Face or Smile Detector based on the technology of liking requires a
+Adding a face/smile detector based on the technology of liking requires a
 developer to implement the designated interface. The implementation can then be 
 selected by modifying a configuration file of the app. A factory will create 
-the Face or Smile Detector based on a configuration file. 
-
-The image analyzer uses the created implementations of Face and Smile
-Detectors. The results of the image analyzer are collected and stored in a
-local database.
-
+the face/smile Detector based on a configuration file. 
+The image analyser uses the created implementations of face/smile
+detectors. The results of the image analyser are collected and stored in a
 In order to load and manage the configuration file, a configuration manager 
 is used.
 
@@ -55,11 +56,11 @@ Figure \ref{fig:arch1} shows the class diagram of the architecture.
     \label{fig:arch1}
 \end{figure*}
 
-On order to seperate to back-end logic from the User Interface, soHappy uses
+In order to seperate back end logic from the user interface, soHappy uses
 ``model-view-viewmodel'', a variant of the ``model-view-controller'' design 
 pattern. The view is seperated by the model by the so called viewmodel, which
 allows easy databinding to the UI (view), whilst allowing easy access from the
-back-end (model). \cite{mvvm}
+back end (model). \cite{mvvm}
 
 \subsection{State Machine}
 
@@ -69,17 +70,17 @@ back-end (model). \cite{mvvm}
   \label{fig:state_chart}
 \end{figure}
 
-State charts are used to describe the states and transitions of an state machine. A state is a situation in which an objects remains, until an certain event happens. Through such an impulse the state machine changed its state. Internal activities can be executed inside a state \cite{Modeling_with_UML}.
+State charts are used to describe the states and transitions of a state machine. A state is a situation in which an object remains, until a certain event happens. Through such an impulse the state machine changes its state. Internal activities can be executed inside a state \cite{Modeling_with_UML}.
 
-Figure \ref{fig:state_chart} shows the states and behavior of the applications state machine.
-A state change can be invoked through three different kind of actions: An user action (for example pressing a button), a timeout after a specified timeframe or a significant analyser result (face detection or smile detection).
+Figure \ref{fig:state_chart} shows the states and behavior of the application's state machine.
+A state change can be invoked through three different kind of actions: A user action (for example pressing a button), a timeout after a specified timeframe or a significant analyser result (face detection or smile detection).
 
 Note that if a face is detected and users move their faces out of the frame afterwards, the process continues and handles these event indirectly as missing smiles.
 In addition, the face leaving the camera frame after a first smile detection is not dealt with explicitly but leads to low smile results.
 Instead of having an end node, the application flow returns to the start screen, represented in the start state.
 
 \subsection{User Interface} \label{sec:user_interface}
-Like most smartphone applications, the soHappy app consists of multiple screens that the user can navigate through, each of them serving a different purpose. Such screens can be implemented in Android using the \texttt{Activity} and \texttt{Fragment} classes. An \texttt{Activity} object acts as an entry point to an Android app and provides a window for User Interface components to be created in \cite{intro_to_activities}. \texttt{Fragment} objects largely fulfill the same task, but are distinct from \texttt{Activity} objects in that they cannot persist on their own and must be hosted within an \texttt{Activity} object \cite{intro_to_fragments}. Since the soHappy app can only be started manually, a single \texttt{Activity} object for its sole entry point is sufficient. Each screen within the app is implemented with a \texttt{Fragment} object, which is hosted inside the single \texttt{Activity}. An example of how \texttt{Fragment} objects are implemented is shown in figure \ref{fig:user_interface}.
+Like most smartphone applications, the soHappy app consists of multiple screens that the user can navigate through, each of them serving a different purpose. Such screens can be implemented in Android using the \texttt{Activity} and \texttt{Fragment} classes. An \texttt{Activity} object acts as an entry point to an Android app and provides a window for user interface components to be created in \cite{intro_to_activities}. \texttt{Fragment} objects largely fulfill the same task, but are distinct from \texttt{Activity} objects in that they cannot persist on their own and must be hosted within an \texttt{Activity} object \cite{intro_to_fragments}. Since the soHappy app can only be started manually, a single \texttt{Activity} object for its sole entry point is sufficient. Each screen within the app is implemented with a \texttt{Fragment} object, which is hosted inside the single \texttt{Activity}. An example of how \texttt{Fragment} objects are implemented is shown in figure \ref{fig:user_interface}.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/user_interface.png}
@@ -94,7 +95,7 @@ In terms of design, Android apps are generally expected to conform to Material D
 As stated in the background section, soHappy uses a deep learning model to 
 provide information about a person smiling by utilizing TFLite.
 
-However, for TFLite to detect smiling, the model must be trained first. This
+However, for TFLite to detect smiling, a model must be trained first. This
 model is not trained on the device, but will be trained separately and shipped
 with the android app.
 
@@ -109,7 +110,7 @@ Refer to \cite{8308186} for a more in-depth explanation on how CNNs work.
 
 For the soHappy smile detection model, eight convolutional layers are used. 
 Every two consecutive convolutional layers are followed by a pooling layer, 
-repeated four times. In the end, a the result is flattened. This model
+repeated four times. In the end, the result is flattened. This model
 architecture is based on the work of Madnani \cite{MayurMadnani2018}.
 
 In order to train the model, the dataset described in ``Smile detection using hybrid face representation'' \cite{Arigbabu2015} was utilized.
