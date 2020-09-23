@@ -66,16 +66,15 @@ back end (model). \cite{mvvm}
 
 As shown in \ref{fig:arch1}, the image analyser produces \texttt{DetectionResult}s.
 In order to collect multiple \texttt{DetectionResult}s, a
-class called \texttt{Measurement} will collect multiple detection results as
+class called \texttt{Measurement} gathers multiple detection results as
 well as the results of the questionnaire.
-After an successful or unsuccessful run of the application, the result is  
-stored into an local database managed by a database manager.
+Results of a finished run will be stored in a local database.
 The data stored in this database is also synchronized to a remote server 
-regulary. \ref{fig:local_database}
+frequently. \ref{fig:local_database}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/local_database}
-  \caption{Class diagram describing the relation between measurements, local database and remote server}
+  \caption{This class diagram describes the relation between measurements, local database and remote server.}
   \label{fig:local_database}
 \end{figure}
 
