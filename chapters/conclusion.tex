@@ -1,10 +1,24 @@
 \section{Conclusion} \label{sec:conclusion}
-In this report, the smartphone application proposed in \cite{sohappy} was implemented on Android, utilizing machine learning techniques in order to perform face and smile detection.
-Since the app was primarily intended to be used in research, it was designed with interchangeability in mind, allowing it to be used and adjusted as necessary in future studies. Especially with mental health being an important topic amidst the pandemic, the soHappy app can be used to aid research in affective computing.
 
-\subsection{Future Work} \label{sec:future_work}
-In spite of showing great potential, certain issues should be addressed in future iterations of the soHappy app.
-Smile detection was implemented without the use of facial landmarks, rendering it difficult for the app to distinguish between artificial and genuine smiling. By using facial landmarks, analysis of smile detection results would be greatly eased for researchers and a large amount of false positives could be eliminated.
-Regarding user experience, users are recommended to use the app regularly and receive notifications whenever three hours have passed since they last used the app. Such a timeframe may be less suitable for some users, making a configurable notification setting more preferable.
-Additionally, during the core process of the soHappy app, no feedback is provided to the user if their face can no longer be detected. To remedy this, the already present color tint could be changed to a different color if such a situation occurs.
+The current implementation of soHappy is developed for Android as target
+platform. This limits the number of users able to use the app, as other 
+mobile phones use different software. As an alternative approach, instead of
+developing for Android, a platform independent approach would be benificial.
+A platform independent app could be implemented using Flutter, a UI toolkit 
+developed by Google being able to compile to all major platforms. Another
+approach would be an based application, providing users a desktop as well as
+mobile experience.
+
+In spite of showing great potential, certain issues should be addressed in future
+iterations of the soHappy app. Smile detection was implemented without the use of
+facial landmarks, rendering it difficult for the app to distinguish between artificial
+and genuine smiling. By using facial landmarks, analysis of smile detection results
+would be greatly eased for researchers and a large amount of false positives
+could be eliminated. Regarding user experience, users are recommended to use the app 
+regularly and receive notifications whenever three hours have passed since they last
+used the app. Such a timeframe may be less suitable for some users, making a
+configurable notification setting more preferable. Additionally, during the core
+process of the soHappy app, no feedback is provided to the user if their face can
+no longer be detected. To remedy this, the already present color tint could be
+changed to a different color if such a situation occurs.
 
