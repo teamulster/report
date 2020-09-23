@@ -62,6 +62,23 @@ pattern. The view is seperated by the model by the so called viewmodel, which
 allows easy databinding to the UI (view), whilst allowing easy access from the
 back end (model). \cite{mvvm}
 
+\subsection{Data Collection} \label{sec:data_collection}
+
+As shown in \ref{fig:arch1}, the image analyser produces \texttt{DetectionResult}s.
+In order to collect multiple \texttt{DetectionResult}s, a
+class called \texttt{Measurement} will collect multiple detection results as
+well as the results of the questionnaire.
+After an successful or unsuccessful run of the application, the result is  
+stored into an local database managed by a database manager.
+The data stored in this database is also synchronized to a remote server 
+regulary. \ref{fig:local_database}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{figures/local_database}
+  \caption{Class diagram describing the relation between measurements, local database and remote server}
+  \label{fig:local_database}
+\end{figure}
+
 \subsection{State Machine}
 
 \begin{figure}
