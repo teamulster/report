@@ -14,14 +14,14 @@ Various language features of Kotlin helped in development, too. Instead of
 implementing the singleton pattern, Kotlin allows to create an single object
 per runtime by using the \texttt{object}-Keyword.
 
-Some design choices of the app were slowed down by Kotlin's language features.
+Some design choices of the app are slowed down by Kotlin's language features.
 As all Kotlin classes inherit from \texttt{Any}, using features of Java's 
-\texttt{Object}-class are not natively available. This made using the methods
+\texttt{Object}-class are not natively available. This makes using the methods
 \texttt{.wait()} and \texttt{.notify()}, which are used for synchronisation,
 more difficult.
 
 ``Android Studio'', known as the official integrated development environment 
-(IDE) for Android development, allowed faster development thanks to useful
+(IDE) for Android development, allows faster development thanks to useful
 features like auto-completion. 
 
 An Android app is built into an `apk'-file. In order to reduce application
@@ -30,25 +30,27 @@ build an apk for each architecture. As a minimum SDK version, version 23
 is selected. This means that the app works on Android 6 and above.
 
 In order to improve the code quality, a linting software called ``detekt'',
-``[...] a static code analysis tool [...]''\cite{detekt2020} was used.
+``[...] a static code analysis tool [...]''\cite{detekt2020} is used.
+Linting is a process detecting possible errors and ensuring coding conventions
+by statically analysing the code.
 
-Various libraries were used to help implement the application. Using
-the included build tool ``Gradle'' \cite{gradle} allowed easy management of 
+Various libraries are used to help implement the application. Using
+the included build tool ``Gradle'' \cite{gradle} allows easy management of 
 dependencies. The following libraries are worth mentioning: CameraX 
-\cite{camerax} is Android's newest library allowing access to the camera and 
+\cite{camerax} is Android's latest library allowing access to the camera and 
 providing an easy way to analyse captured images. ``GPUImage'' \cite{gpuimage}
-allowed to apply filters onto the preview image. A library called ``Nitrite''
+allows to apply filters onto the preview image. A library called ``Nitrite''
 \cite{nitrite} allows to implement an NoSQL-Database storing our measurement 
 locally.
 
-For image analysis, we used the following libraries: Cascade based face
-detection use the official `OpenCV4Android'-Library \cite{opencv4android}.
+For image analysis the following libraries are used: Cascade classifier based
+face detection use the official `OpenCV4Android'-Library \cite{opencv4android},
 while machine learning based approaches utilise the official TFLite library.
 \cite{tensorflow}
 
 In order to train the CNN, which is explained in \ref{sec:methodology}, a
-Python 3 script running in an Jupyter notebook was utilised. 
-The Python TensorFlow library was used in combination with `Keras',
+Python 3 script running in an Jupyter notebook is used. 
+The Python TensorFlow library is used in combination with `Keras',
 which allows creating an model architecture easily. In order to prepare the
 training, test and validation data, the libraries `pandas', `pillow', 
-`mathplotlib' and `numpy' were used.
+`matplotlib' and `numpy' are used.
