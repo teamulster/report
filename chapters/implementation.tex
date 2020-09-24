@@ -1,5 +1,8 @@
 \section{Implementation} \label{sec:implementation}
 
+The following chapter describes details of the implementation such as
+patterns, language and IDE (integrated development environment) choices.
+
 The app is built using Kotlin. Kotlin is ``[...] an open-source statically 
 typed programming language that targets the JVM, Android, JavaScript and 
 Native.'' \cite{kotlin2020}
@@ -20,9 +23,8 @@ As all Kotlin classes inherit from \texttt{Any}, using features of Java's
 \texttt{.wait()} and \texttt{.notify()}, which are used for synchronisation,
 more difficult.
 
-``Android Studio'', the official integrated development environment 
-(IDE) for Android development, allows faster development thanks to useful
-features like auto-completion. 
+``Android Studio'', the official IDE for Android development, allows faster
+development thanks to useful features like auto-completion. 
 
 An Android app is built into an `apk'-file. In order to reduce application
 size, soHappy differentiates between CPU architectures, and will
