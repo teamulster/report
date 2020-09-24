@@ -13,6 +13,7 @@ The team named a scrum master, who ensured that the team adhered to the chosen a
 With two approvals necessary for a pull request to be merged, every member of the project group was able to constantly keep an overview over the project's current progression.
 
 \subsection{User Journey} \label{sec:user_journey}
+
 Upon launching the soHappy app, the user will be presented with a home screen, where they can either start the app or navigate to miscellaneous screens via an options menu, in which the user may change settings, view their history or look up a short explanation.
 When the user starts the app, they will be asked to move their face into the camera frame. Until a face is recognized, a red tint is applied to the camera frame, providing visual feedback to the user. Advancing to different stages of the process changes the color of the tint accordingly. If no face is detected after ten seconds, the measurement will be restarted.
 
@@ -33,6 +34,13 @@ Figure \ref{fig:user_journey} illustrates the user interface during different st
 \end{figure*}
 
 Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy.
+
+A study may also provide an individual configuration for the app. This configuration
+can change the behavior of the app, like various timings or different implementations
+of face/smile detectors.
+As a first step after installing soHappy, the user may scan an QR code provided
+by the study with an installed QR-Code app. The user will be asked to open the
+link with soHappy. After opening the link, the configuration will be applied.
 
 \subsection{Architecture}
 
