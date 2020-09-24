@@ -1,7 +1,12 @@
 \section{Methodology} \label{sec:methodology}
 % detailing the approaches that were used in your experiments; this may also include implementation details in relation to the mobile architecture used
 
-\subsection{development process}
+This section starts by highlighting the characteristics of the development process, followed by
+an explanation of the user journey. Additionally, the utilisation of the aforementioned
+approaches is described.
+In the subsections Architecture and State Machine, the app structure is presented. Afterwards, the properties of the user interface are described. Finally, the section ends with an overview of the model training.
+
+\subsection{Development Process}
 
 While developing the app, a variety of agile development methods were applied.
 The project team used daily stand-ups to share their individual work progress and talk about current difficulties.
@@ -10,7 +15,7 @@ The Kanban board optimised the organisational process. Moreover, it helped the t
 At the beginning of every week, a retrospection of the past week was conducted, followed by identification of the milestone for the week.
 
 The team named a scrum master, who ensured that the team adhered to the chosen agile methods. Furthermore, the member with the greatest development experience was chosen as lead of programming.
-With two approvals necessary for a pull request to be merged, every member of the project group was able to constantly keep an overview over the project's current progression.
+With two approvals necessary for a pull request to be merged, every member of the project group was able to constantly keep an overview of the project's current progression.
 
 \subsection{User Journey} \label{sec:user_journey}
 Upon launching the soHappy app, the user will be presented with a home screen, where they can either start the app or navigate to miscellaneous screens via an options menu, in which the user may change settings, view their history or look up a short explanation.
@@ -34,7 +39,7 @@ Figure \ref{fig:user_journey} illustrates the user interface during different st
 
 Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy.
 
-\subsection{Architecture}
+\subsection{Architecture} \label{sec:architecture}
 
 The main goal of the software architecture of soHappy is providing flexibility 
 in switching out various components.
@@ -62,7 +67,7 @@ pattern. The view is seperated by the model by the so called viewmodel, which
 allows easy databinding to the UI (view), whilst allowing easy access from the
 back end (model). \cite{mvvm}
 
-\subsection{State Machine}
+\subsection{State Machine} \label{sec:state_machine}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/state_chart.png}
