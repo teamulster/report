@@ -1,5 +1,9 @@
 \section{Background} \label{sec:background}
 % identifying existing approaches within the research literature; this may potentially include mobile-based and non-mobile approaches if necessary
+The following chapter introduces several machine learning approaches such as cascade
+classifiers. Additionally, OpenCV and TensorFlow are presented as tools for face/smile
+detection.
+
 Detecting faces, let alone smiles, is a challenging task essential to the functionality of the soHappy app. Solving such tasks usually involves usage of machine learning algorithms, which process large amounts of data in order to make predictions and are generally seen as state of the art for computer vision problems \cite{foundations_ml}. Thus, machine learning approaches were chosen to implement face and smile detection.
 
 Since Viola and Jones proposed ``Rapid Object Detection using a Boosted Cascade of Simple Features'' \cite{viola_jones} in 2001, their concept is the basis of most face detection approaches.
@@ -26,3 +30,4 @@ As an alternative, a face/smile detector was implemented using Google's Android 
 ML Kit comes with a model trained using deep learning.
 Deep learning increases both face and smile detection performance by a big margin.
 The idea behind adding ML Kit besides already having OpenCV/self trained TFLite model, is to provide more exchangeability of soHappy's core functionality and increase flexibility for a future study to easily add their own implementations.
+
