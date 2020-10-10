@@ -7,7 +7,7 @@ detection.
 Detecting faces, let alone smiles, is a challenging task essential to the functionality of the soHappy app. Solving such tasks usually involves usage of machine learning algorithms, which process large amounts of data in order to make predictions and are generally seen as state of the art for computer vision problems \cite{foundations_ml}. Thus, machine learning approaches were chosen to implement face and smile detection.
 
 Since Viola and Jones proposed ``Rapid Object Detection using a Boosted Cascade of Simple Features'' \cite{viola_jones} in 2001, their concept is the basis of most face detection approaches.
-It's an extremely fast and solid machine learning approach for object detection in videos and pictures, e. g. faces.
+It is an extremely fast and solid machine learning approach for object detection in videos and pictures, e. g. faces.
 
 In detail, the concept is distinguished by three key components.
 The first is the ``Integral Image'', a new image representation which allows the detector to compute features very fast.
@@ -25,6 +25,15 @@ The main advantage TFLite offers is the ability to add a self trained model to d
 Depending on the dataset a model is trained with, it is usually able to detect emotions, for example happiness or sadness.
 However, soHappy only needs smile detection to comply with the core requirements.
 Therefore, its model can be broken down to simply detect smiling/happiness, rather than having the entire emotion detection.
+
+The soHappy smile detection model is based on a convolutional neural network 
+(CNN). CNNs are useful for image analysis purposes. A CNN utilizes multiple
+convolutional layers as well as pooling layers. A convolutional layer works by
+applying multiple different filters onto the input of the layer. A 
+convolutional layer also looks at regions of the applied filter layers instead 
+of individual pixels. This process is called convolution.
+Pooling describes the process of discarding unused information.
+Refer to \cite{8308186} for a more in-depth explanation on how CNNs work.
 
 As an alternative, a face/smile detector was implemented using Google's Android API (ML Kit) \cite{mlkit} which also utilizes TensorFlow.
 ML Kit comes with a model trained using deep learning.
