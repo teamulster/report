@@ -11,7 +11,8 @@ In the subsections Architecture and State Machine, the app structure is presente
 While developing the app, a variety of agile development methods were applied.
 The project team used daily stand-ups to share their individual work progress and talk about current difficulties.
 A short conclusion meeting was held at the end of every day to summarise the work effort and support productive communication.
-The Kanban board optimised the organisational process. Moreover, it helped the team to remember who's currently working on which task.
+The Kanban board optimised the organisational process. Moreover, it helped the team to remember who
+is currently working on which task.
 At the beginning of every week, a retrospection of the past week was conducted, followed by identification of the milestone for the week.
 
 The team named a scrum master, who ensured that the team adhered to the chosen agile methods. Furthermore, the member with the greatest development experience was chosen as lead of programming.
@@ -20,11 +21,11 @@ With two approvals necessary for a pull request to be merged, every member of th
 \subsection{User Journey} \label{sec:user_journey}
 
 Upon launching the soHappy app, the user will be presented with a home screen, where they can either start the app or navigate to miscellaneous screens via an options menu, in which the user may change settings, view their history or look up a short explanation.
-When the user starts the app, they will be asked to move their face into the camera frame. Until a face is recognized, a red tint is applied to the camera frame, providing visual feedback to the user. Advancing to different stages of the process changes the color of the tint accordingly. If no face is detected after ten seconds, the measurement will be restarted.
+When the user starts the app, they will be asked to move their face into the camera frame. Until a face is recognized, a red tint is applied to the camera frame, providing visual feedback to the user, as illustrated in figure \ref{fig:user_journey}a. Advancing to different stages of the process changes the color of the tint accordingly. If no face is detected after ten seconds, the measurement will be restarted.
 
-Once a face has been detected, the red tint is changed to blue. At the same time, a countdown of three seconds is started, allowing the user to relax and take a couple of breaths.
+Once a face has been detected, the red tint is changed to blue. At the same time, a countdown of three seconds is started, allowing the user to relax and take a couple of breaths, as shown in figure \ref{fig:user_journey}b.
 After the countdown expires, a short text serving as a stimulus to smile is shown on the screen, prompting the user to recall memories they are fond of.
-A 30 second timer is started simultaneously, visualized as a growing progress bar at the top of the screen. Expiration of this timer causes the app to proceed to the next stage.
+A 30 second timer is started simultaneously, visualized as a growing progress bar at the top of the screen (Figure \ref{fig:user_journey}c). Expiration of this timer causes the app to proceed to the next stage.
 An icon is displayed on the screen once a smile has been detected.
 
 By virtue of the user seeing their own face during this process, genuine smiling may become difficult, especially if the user has problems with feelings of self-consciousness. In order to aid the user in smiling, a blur filter is applied to the camera, rendering objects harder to recognize.
@@ -38,7 +39,7 @@ Figure \ref{fig:user_journey} illustrates the user interface during different st
   \label{fig:user_journey}
 \end{figure*}
 
-Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy.
+Following this process, a set of six questions querying current circumstances are posed to the user. Once all questions have been answered, the user will be thanked for their participation and presented with a percentage indicating how likely they are genuinely happy (Figure \ref{fig:user_journey}d).
 
 A study may also provide an individual configuration for the app. This configuration
 can change the behaviour of the app, like various timings or different implementations
@@ -52,6 +53,7 @@ link with soHappy. After opening the link, the configuration will be applied.
 The main goal of the software architecture of soHappy is providing flexibility 
 in switching out various components.
 
+Figure \ref{fig:arch1} shows the class diagram of the architecture.
 Adding a face/smile detector based on the technology of liking requires a
 developer to implement the designated interface. The implementation can then be 
 selected by modifying a configuration file of the app. A factory will create 
@@ -60,8 +62,6 @@ The image analyser uses the created implementations of face/smile
 detectors. The results of the image analyser are collected and stored in a
 In order to load and manage the configuration file, a configuration manager 
 is used.
-
-Figure \ref{fig:arch1} shows the class diagram of the architecture.
 
 \begin{figure*}
     \includegraphics[width=\linewidth]{figures/methodology_architecture_1.png}
@@ -77,17 +77,17 @@ back end (model). \cite{mvvm}
 
 \subsection{Data Collection} \label{sec:data_collection}
 
-As shown in \ref{fig:arch1}, the image analyser produces \texttt{DetectionResult}s.
+As shown in figure \ref{fig:local_database}, the image analyser produces \texttt{DetectionResult}s.
 In order to collect multiple \texttt{DetectionResult}s, a
 class called \texttt{Measurement} gathers multiple detection results as
 well as the results of the questionnaire.
 Results of a finished run will be stored in a local database.
 The data stored in this database is also synchronised to a remote server 
-frequently. \ref{fig:local_database}
+frequently.
 
 \begin{figure}
   \includegraphics[width=\linewidth]{figures/local_database}
-  \caption{This class diagram describes the relation between measurements, local database and remote server.}
+  \caption{Class diagram for local database objects.}
   \label{fig:local_database}
 \end{figure}
 
@@ -126,20 +126,13 @@ provide information about a person smiling by utilizing TFLite.
 
 However, for TFLite to detect smiling, a model must be trained first. This
 model is not trained on the device, but will be trained separately and shipped
-with the android app.
-
-The soHappy smile detection model is on based a convolutional neural network 
-(CNN). CNNs are useful for image analysis purposes. A CNN utilizes multiple
-convolutional layers as well as pooling layers. A convolutional layer works by
-applying multiple different filters onto the input of the layer. A 
-convolutional layer also looks at regions of the applied filter layers instead 
-of individual pixels. This process is called convolution.
-Pooling describes the process of discarding unused information.
-Refer to \cite{8308186} for a more in-depth explanation on how CNNs work.
+with the Android app.
 
 For the soHappy smile detection model, eight convolutional layers are used. 
 Every two consecutive convolutional layers are followed by a pooling layer, 
 repeated four times. In the end, the result is flattened. This model
 architecture is based on the work of Madnani \cite{MayurMadnani2018}.
 
-In order to train the model, the dataset described in ``Smile detection using hybrid face representation'' \cite{Arigbabu2015} was utilized.
+In order to train the model, the ``Labeled faces in the wild'' dataset was utilized
+\cite{Arigbabu2015}.
+
